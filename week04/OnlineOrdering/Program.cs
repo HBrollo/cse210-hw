@@ -22,6 +22,7 @@ class Program
         product12.setProduct("Pillow", 70, 5, 3);
         order1.addProduct(product12);
 
+        Console.WriteLine("Order 1:");
         order1.displayOrder();
 
 
@@ -43,6 +44,7 @@ class Program
         product22.setProduct("Glass cups", 5, 4, 10);
         order2.addProduct(product22);
 
+        Console.WriteLine("Order 2:");
         order2.displayOrder();
     }
 }
