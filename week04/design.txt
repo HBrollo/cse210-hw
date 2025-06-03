@@ -1,0 +1,25 @@
+***Youtube Videos:***
+
+Other than the base program, contains classes for the video and the comments.
+
+Comment: 
+Contains the contents of the comment, as well as the name of the person who wrote it.
+
+Video:
+Contains the name of the video, the name of the author, and the length of the video. Also contains a list of the comments made on the video.
+
+
+***Online Ordering:***
+Other than the base program, contains classes for the customer, the address, the product, and a class for the order that will contain info from all the other classes.
+
+Address:
+Contains the user's street, city, state and country information; also tell if the customer lives outside of the USA or not.
+
+Customer:
+Contains the user's name; also accepts data from the address class.
+
+Product:
+Contains info about the item's name, it's id, and it's cost.
+
+Order:
+Accepts and displays information from all the other classes. Calculates the total cost of the order and then displays it all for the user.
