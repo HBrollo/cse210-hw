@@ -4,6 +4,36 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello World! This is the Mindfulness Project.");
+        Activity newActivity = new Activity();
+        BreathingActivity newBreath = new BreathingActivity();
+        ReflectingActivity newReflect = new ReflectingActivity();
+        ListingActivity newList = new ListingActivity();
+        int i = 0;
+
+        while (i == 0)
+        {
+            newActivity.DisplayStartingMessage();
+            int input = int.Parse(Console.ReadLine());
+            if (input == 1)
+            {
+                //Breathing Activity
+                newBreath.Run();
+            }
+            else if (input == 2)
+            {
+                //Reflecting Activity
+                newReflect.Run();
+            }
+            else if (input == 3)
+            {
+                //Listing Activity
+                newList.Run();
+            }
+            else if (input == 4)
+            {
+                //End program
+                i = 1;
+            }
+        }
     }
 }
