@@ -1,18 +1,18 @@
 public class Activity()
 {
-    /*private string _name;
-    private string _description;
-    private string _duration;*/
+    protected string _name;
+    protected string _description;
+    protected int _duration;
 
     public void DisplayStartingMessage()
     {
         Console.Clear();
-        Console.WriteLine("Menu Options:");
-        Console.WriteLine(" 1. Start breathing activity");
-        Console.WriteLine(" 2. Start reflecting activity");
-        Console.WriteLine(" 3. Start listing activity");
-        Console.WriteLine(" 4. Quit");
-        Console.Write("Select a choice from the menu: ");
+        Console.WriteLine($"Welcome to the {_name} Activity.");
+        Console.WriteLine();
+        Console.WriteLine(_description);
+        Console.WriteLine();
+        Console.WriteLine("How long, in seconds, would you like for your session to be?");
+        _duration = int.Parse(Console.ReadLine());
     }
 
     public void DisplayEndingMessage()

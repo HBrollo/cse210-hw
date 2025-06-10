@@ -2,17 +2,15 @@ public class ListingActivity : Activity
 {
     private int _count;
     private List<string> _prompts = new List<string>();
+    public ListingActivity()
+    {
+        _name = "Listing";
+        _description = "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area. ";
+    }
 
     public void Run()
     {
-        Console.Clear();
-        Console.WriteLine("Welcome to the Listing activity.");
-        Console.WriteLine();
-        Console.WriteLine("This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area. ");
-        Console.WriteLine();
-        Console.WriteLine("How long, in seconds, would you like for your session? ");
-        int duration = int.Parse(Console.ReadLine());
-
+        DisplayStartingMessage();
         Console.Clear();
         Console.WriteLine("Get ready...");
         ShowCountdown(5);
@@ -20,7 +18,7 @@ public class ListingActivity : Activity
         GetRandomPrompt();
 
         DateTime startTime = DateTime.Now;
-        DateTime endTime = startTime.AddSeconds(duration);
+        DateTime endTime = startTime.AddSeconds(_duration);
         _count = 0;
 
         Console.WriteLine();

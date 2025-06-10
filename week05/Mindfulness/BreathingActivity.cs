@@ -1,21 +1,20 @@
 public class BreathingActivity : Activity
 {
+    public BreathingActivity()
+    {
+        _name = "Breathing";
+        _description = "This Activity will help you relax by walking through breathing in and out slowly. Clear your mind and focus on breathing.";
+    }
     public void Run()
     {
-        Console.Clear();
-        Console.WriteLine("Welcome to the Breathing Activity.");
-        Console.WriteLine();
-        Console.WriteLine("This Activity will help you relax by walking through breathing in and out slowly. Clear your mind and focus on breathing.");
-        Console.WriteLine();
-        Console.Write("How long, in seconds, would you like for your session? ");
-        int duration = int.Parse(Console.ReadLine());
+        DisplayStartingMessage();
 
         Console.Clear();
         Console.WriteLine("Get ready...");
         ShowCountdown(5);
 
         DateTime startTime = DateTime.Now;
-        DateTime endTime = startTime.AddSeconds(duration);
+        DateTime endTime = startTime.AddSeconds(_duration);
 
         while (DateTime.Now < endTime)
         {
@@ -32,7 +31,7 @@ public class BreathingActivity : Activity
 
         }
         ;
-        Console.WriteLine($"You have completed another {duration} seconds of the Breathing Activity.");
+        Console.WriteLine($"You have completed another {_duration} seconds of the Breathing Activity.");
         DisplayEndingMessage();
     }
 }

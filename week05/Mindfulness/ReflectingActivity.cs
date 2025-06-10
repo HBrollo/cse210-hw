@@ -3,16 +3,14 @@ public class ReflectingActivity : Activity
     private List<string> _prompts = new List<String>();
     private List<string> _questions = new List<String>();
 
+    public ReflectingActivity()
+    {
+        _name = "Reflecting";
+        _description = "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.";
+    }
     public void Run()
     {
-        Console.Clear();
-        Console.WriteLine("Welcome to the Reflecting Activity.");
-        Console.WriteLine();
-        Console.WriteLine("This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.");
-        Console.WriteLine();
-        Console.WriteLine("How long, in seconds, would you like for your session to be?");
-        int duration = int.Parse(Console.ReadLine());
-
+        DisplayStartingMessage();
         Console.Clear();
         Console.WriteLine("Get ready...");
         ShowSpinner(5);
@@ -25,14 +23,14 @@ public class ReflectingActivity : Activity
         Console.WriteLine();
 
         DateTime startTime = DateTime.Now;
-        DateTime endTime = startTime.AddSeconds(duration);
+        DateTime endTime = startTime.AddSeconds(_duration);
 
         while (DateTime.Now < endTime)
         {
             DisplayQuestion();
 
         }
-        Console.WriteLine($"You reflected for {duration} seconds!");
+        Console.WriteLine($"You reflected for {_duration} seconds!");
         DisplayEndingMessage();
 
     }
